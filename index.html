@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capitec Inc | VIVILEO &amp; TITATEC</title>
+  <meta name="description" content="Capitec Inc builds and manages a portfolio of specialized vertical brands, including VIVILEO EV charging solutions and TITATEC commercial LED lighting." />
+  <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" />
+  <style>
+    /* ===== 此处省略原有完整 CSS（保持不变） ===== */
+    /* 为了节省篇幅，请直接复用您提供的 <style> 中所有代码，一字不改 */
+    /* 但为了本方案能独立运行，我已在下方完整保留您原有的所有样式 */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #1A1A1A;
+      background: #FFFFFF;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+    :root {
+      --navy: #0A1628;
+      --navy-light: #13243D;
+      --vivileo: #00D4AA;
+      --vivileo-dark: #00A885;
+      --titatec: #F5A623;
+      --titatec-dark: #D4891A;
+      --gray-50: #F8F9FA;
+      --gray-100: #F1F3F5;
+      --gray-200: #E9ECEF;
+      --gray-500: #6B7280;
+      --gray-700: #374151;
+      --white: #FFFFFF;
+    }
+    .announce-bar {
+      background: var(--navy);
+      color: var(--white);
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      padding: 8px 0;
+      overflow: hidden;
+    }
+    .announce-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .announce-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.85;
+    }
+    .announce-item svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--navy);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .nav-logo-mark::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: var(--vivileo);
+    }
+    .nav-logo-mark::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: var(--titatec);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .nav-link {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-700);
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-link:hover {
+      color: var(--navy);
+    }
+    .nav-link.has-dropdown {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .nav-link.has-dropdown svg {
+      width: 12px;
+      height: 12px;
+    }
+    .nav-cta {
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--navy-light);
+    }
+    .dropdown-wrap {
+      position: relative;
+    }
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      box-shadow: 0 12px 40px rgba(10, 22, 40, 0.12);
+      padding: 8px;
+      min-width: 280px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s ease;
+    }
+    .dropdown-wrap:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .dropdown-item:hover {
+      background: var(--gray-50);
+    }
+    .dropdown-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dropdown-item-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .dropdown-item-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .dropdown-item-sub {
+      font-size: 11px;
+      color: var(--gray-500);
+    }
+    .hero {
+      position: relative;
+      min-height: 640px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+    .hero-side {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 64px 56px;
+      min-height: 640px;
+      overflow: hidden;
+    }
+    .hero-side-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.8s ease;
+    }
+    .hero-side:hover .hero-side-bg {
+      transform: scale(1.04);
+    }
+    .hero-side-overlay {
+      position: absolute;
+      inset: 0;
+    }
+    .hero-vivileo .hero-side-overlay {
+      background: linear-gradient(180deg, rgba(10, 22, 40, 0.3) 0%, rgba(10, 22, 40, 0.75) 100%);
+    }
+    .hero-titatec .hero-side-overlay {
+      background: linear-gradient(180deg, rgba(10, 22, 40, 0.2) 0%, rgba(10, 22, 40, 0.7) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: var(--white);
+    }
+    .hero-brand-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding: 6px 14px;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .hero-brand-tag-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .hero-vivileo .hero-brand-tag-dot {
+      background: var(--vivileo);
+    }
+    .hero-titatec .hero-brand-tag-dot {
+      background: var(--titatec);
+    }
+    .hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .hero-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      opacity: 0.85;
+      max-width: 420px;
+      margin-bottom: 28px;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.25s;
+    }
+    .hero-vivileo .hero-cta {
+      background: var(--vivileo);
+      color: var(--navy);
+    }
+    .hero-vivileo .hero-cta:hover {
+      background: var(--vivileo-dark);
+      color: var(--white);
+    }
+    .hero-titatec .hero-cta {
+      background: var(--titatec);
+      color: var(--navy);
+    }
+    .hero-titatec .hero-cta:hover {
+      background: var(--titatec-dark);
+      color: var(--white);
+    }
+    .hero-cta svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s;
+    }
+    .hero-cta:hover svg {
+      transform: translateX(4px);
+    }
+    .hero-divider {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.15);
+      z-index: 3;
+    }
+    .hero-center-badge {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 4;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 20px 28px;
+      text-align: center;
+      box-shadow: 0 16px 48px rgba(10, 22, 40, 0.25);
+    }
+    .hero-center-badge-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 6px;
+    }
+    .hero-center-badge-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .hero-center-badge-sub {
+      font-size: 11px;
+      color: var(--gray-500);
+      margin-top: 4px;
+    }
+    .section {
+      padding: 96px 32px;
+    }
+    .section-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .section-eyebrow {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--gray-500);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .brands-section {
+      background: var(--gray-50);
+    }
+    .brands-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .brand-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .brand-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 56px rgba(10, 22, 40, 0.1);
+    }
+    .brand-card-image {
+      height: 280px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .brand-card-image-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-start;
+      padding: 24px;
+    }
+    .brand-card-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      padding: 8px 18px;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+    }
+    .brand-card-logo.vivileo {
+      background: rgba(0, 212, 170, 0.25);
+      border: 1px solid rgba(0, 212, 170, 0.4);
+    }
+    .brand-card-logo.titatec {
+      background: rgba(245, 166, 35, 0.25);
+      border: 1px solid rgba(245, 166, 35, 0.4);
+    }
+    .brand-card-body {
+      padding: 32px;
+    }
+    .brand-card-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .brand-card-tag.vivileo {
+      background: rgba(0, 212, 170, 0.12);
+      color: var(--vivileo-dark);
+    }
+    .brand-card-tag.titatec {
+      background: rgba(245, 166, 35, 0.12);
+      color: var(--titatec-dark);
+    }
+    .brand-card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .brand-card-desc {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .brand-card-features {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .brand-card-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--gray-700);
+    }
+    .brand-card-feature svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+    .brand-card-feature.vivileo svg {
+      color: var(--vivileo-dark);
+    }
+    .brand-card-feature.titatec svg {
+      color: var(--titatec-dark);
+    }
+    .brand-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: gap 0.2s;
+    }
+    .brand-card-link.vivileo {
+      color: var(--vivileo-dark);
+    }
+    .brand-card-link.titatec {
+      color: var(--titatec-dark);
+    }
+    .brand-card-link:hover {
+      gap: 12px;
+    }
+    .brand-card-link svg {
+      width: 16px;
+      height: 16px;
+    }
+    .products-section {
+      background: var(--white);
+    }
+    .products-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 48px;
+    }
+    .product-tab {
+      padding: 10px 24px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--gray-200);
+      background: var(--white);
+      color: var(--gray-500);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .product-tab.active.vivileo {
+      background: var(--vivileo);
+      border-color: var(--vivileo);
+      color: var(--navy);
+    }
+    .product-tab.active.titatec {
+      background: var(--titatec);
+      border-color: var(--titatec);
+      color: var(--navy);
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(10, 22, 40, 0.08);
+    }
+    .product-card-image {
+      height: 200px;
+      background: var(--gray-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .product-card-image img {
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .product-card-body {
+      padding: 20px;
+    }
+    .product-card-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .product-card-brand.vivileo {
+      color: var(--vivileo-dark);
+    }
+    .product-card-brand.titatec {
+      color: var(--titatec-dark);
+    }
+    .product-card-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.4;
+      margin-bottom: 8px;
+      min-height: 40px;
+    }
+    .product-card-specs {
+      font-size: 11px;
+      color: var(--gray-500);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .product-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .product-card-price {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .product-card-btn {
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .product-card-btn.vivileo {
+      background: rgba(0, 212, 170, 0.1);
+      color: var(--vivileo-dark);
+    }
+    .product-card-btn.vivileo:hover {
+      background: var(--vivileo);
+      color: var(--navy);
+    }
+    .product-card-btn.titatec {
+      background: rgba(245, 166, 35, 0.1);
+      color: var(--titatec-dark);
+    }
+    .product-card-btn.titatec:hover {
+      background: var(--titatec);
+      color: var(--navy);
+    }
+    .solutions-section {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .solutions-section .section-title {
+      color: var(--white);
+    }
+    .solutions-section .section-desc {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .solutions-section .section-eyebrow {
+      color: rgba(255, 255, 255, 0.4);
+    }
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .solution-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 36px;
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .solution-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .solution-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .solution-icon.vivileo {
+      background: rgba(0, 212, 170, 0.15);
+    }
+    .solution-icon.titatec {
+      background: rgba(245, 166, 35, 0.15);
+    }
+    .solution-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+    .solution-icon.vivileo svg {
+      color: var(--vivileo);
+    }
+    .solution-icon.titatec svg {
+      color: var(--titatec);
+    }
+    .solution-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .solution-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .solution-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .solution-list-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .solution-list-item svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+    .solution-list-item.vivileo svg {
+      color: var(--vivileo);
+    }
+    .solution-list-item.titatec svg {
+      color: var(--titatec);
+    }
+    .why-section {
+      background: var(--gray-50);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .why-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 32px 24px;
+      border: 1px solid var(--gray-200);
+      text-align: center;
+    }
+    .why-icon {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 18px;
+      background: var(--navy);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .why-icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--white);
+    }
+    .why-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .why-desc {
+      font-size: 13px;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+    .about-strip {
+      background: var(--white);
+      padding: 80px 32px;
+      border-top: 1px solid var(--gray-200);
+    }
+    .about-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .about-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--navy);
+      margin-bottom: 16px;
+      text-transform: none; 
+    }
+    .about-text {
+      font-family: 'Manrope', sans-serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .about-text .brand-v {
+      color: var(--vivileo-dark);
+      font-weight: 600;
+    }
+    .about-text .brand-t {
+      color: var(--titatec-dark);
+      font-weight: 600;
+    }
+    .contact-section {
+      background: var(--gray-50);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .contact-info h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .contact-info p {
+      font-size: 15px;
+      color: var(--gray-500);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .contact-detail-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--navy);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-detail-icon svg {
+      width: 18px;
+      height: 18px;
+      color: var(--white);
+    }
+    .contact-detail-text h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .contact-detail-text p {
+      font-size: 13px;
+      color: var(--gray-500);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .contact-form {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 36px;
+      border: 1px solid var(--gray-200);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--navy);
+      background: var(--white);
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--navy);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .form-submit {
+      width: 100%;
+      padding: 14px;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+    .form-submit:hover {
+      background: var(--navy-light);
+    }
+    .footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 64px 32px 32px;
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .footer-brand-desc {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .footer-brands {
+      display: flex;
+      gap: 12px;
+    }
+    .footer-brand-pill {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+    }
+    .footer-brand-pill.vivileo {
+      background: rgba(0, 212, 170, 0.15);
+      color: var(--vivileo);
+      border: 1px solid rgba(0, 212, 170, 0.3);
+    }
+    .footer-brand-pill.titatec {
+      background: rgba(245, 166, 35, 0.15);
+      color: var(--titatec);
+      border: 1px solid rgba(245, 166, 35, 0.3);
+    }
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 18px;
+      letter-spacing: 0.05em;
+    }
+    .footer-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col a {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.2s;
+    }
+    .footer-col a:hover {
+      color: var(--white);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-copyright {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-legal a {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.4);
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero-side {
+        min-height: 480px;
+        padding: 48px 32px;
+      }
+      .hero-divider,
+      .hero-center-badge {
+        display: none;
+      }
+      .hero-title {
+        font-size: 34px;
+      }
+      .brands-grid {
+        grid-template-columns: 1fr;
+      }
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .solutions-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+    @media (max-width: 640px) {
+      .section {
+        padding: 64px 20px;
+      }
+      .section-title {
+        font-size: 28px;
+      }
+      .hero-title {
+        font-size: 28px;
+      }
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+      .announce-inner {
+        gap: 16px;
+      }
+      .about-text {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 公告栏 - 文字在 CONFIG.announce 中配置 -->
+  <div class="announce-bar">
+    <div class="announce-inner" id="announceContainer"></div>
+  </div>
+
+  <!-- 导航 -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-mark"></span>
+        <span id="navBrandName">Capitec Inc</span>
+      </a>
+      <div class="nav-links">
+        <div class="dropdown-wrap">
+          <a href="#brands" class="nav-link has-dropdown">
+            Our Brands
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="#vivileo" class="dropdown-item">
+              <span class="dropdown-dot" style="background:var(--vivileo)"></span>
+              <span class="dropdown-item-text">
+                <span class="dropdown-item-title">VIVILEO EV Chargers</span>
+                <span class="dropdown-item-sub">Home &amp; commercial charging</span>
+              </span>
+            </a>
+            <a href="#titatec" class="dropdown-item">
+              <span class="dropdown-dot" style="background:var(--titatec)"></span>
+              <span class="dropdown-item-text">
+                <span class="dropdown-item-title">TITATEC Lighting</span>
+                <span class="dropdown-item-sub">Retail &amp; supermarket LED</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        <a href="#solutions" class="nav-link">Solutions</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#contact" class="nav-cta" id="navCtaText">Wholesale Inquiry</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero 分屏 -->
+  <section class="hero">
+    <div class="hero-side hero-vivileo">
+      <div class="hero-side-bg" id="heroBgVivileo" style="background-image:url('')"></div>
+      <div class="hero-side-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-brand-tag"><span class="hero-brand-tag-dot"></span>Brand of Capitec Inc</div>
+        <h1 class="hero-title" id="heroTitleVivileo">VIVILEO<br>EV Charging</h1>
+        <p class="hero-desc" id="heroDescVivileo">Reliable home and commercial EV charging stations...</p>
+        <a href="#vivileo" class="hero-cta" id="heroCtaVivileo">
+          Explore VIVILEO Chargers
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-side hero-titatec">
+      <div class="hero-side-bg" id="heroBgTitatec" style="background-image:url('')"></div>
+      <div class="hero-side-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-brand-tag"><span class="hero-brand-tag-dot"></span>Licensed brand maneged by Capitec Inc</div>
+        <h1 class="hero-title" id="heroTitleTitatec">TITATEC<br>Gondola Lighting</h1>
+        <p class="hero-desc" id="heroDescTitatec">Professional gondola shelf LED lighting and custom illumination...</p>
+        <a href="#titatec" class="hero-cta" id="heroCtaTitatec">
+          Discover TITATEC Lighting
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-center-badge">
+      <div class="hero-center-badge-label">Parent Company</div>
+      <div class="hero-center-badge-name" id="badgeCompanyName">Capitec Inc</div>
+      <div class="hero-center-badge-sub" id="badgeCompanyRegion">North America</div>
+    </div>
+  </section>
+
+  <!-- Our Brands -->
+  <section class="section brands-section" id="brands">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow" id="brandsEyebrow">Our Brands</div>
+        <h2 class="section-title" id="brandsTitle">Two Specialized Brands,<br>One Trusted Company</h2>
+        <p class="section-desc" id="brandsDesc">Capitec Inc builds and manages a growing portfolio...</p>
+      </div>
+      <div class="brands-grid">
+        <div class="brand-card" id="vivileo">
+          <div class="brand-card-image" id="vivileoCardBg" style="background-image:url('')">
+            <div class="brand-card-image-overlay"><span class="brand-card-logo vivileo">VIVILEO</span></div>
+          </div>
+          <div class="brand-card-body">
+            <span class="brand-card-tag vivileo" id="vivileoTag">EV Charging Solutions</span>
+            <h3 class="brand-card-title" id="vivileoCardTitle">Powering the EV Transition</h3>
+            <p class="brand-card-desc" id="vivileoCardDesc">VIVILEO is the EV charging hardware brand...</p>
+            <div class="brand-card-features" id="vivileoFeatures"></div>
+            <a href="#products" class="brand-card-link vivileo" id="vivileoLink">
+              View VIVILEO Products
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="brand-card" id="titatec">
+          <div class="brand-card-image" id="titatecCardBg" style="background-image:url('')">
+            <div class="brand-card-image-overlay"><span class="brand-card-logo titatec">TITATEC</span></div>
+          </div>
+          <div class="brand-card-body">
+            <span class="brand-card-tag titatec" id="titatecTag">Retail LED Lighting</span>
+            <h3 class="brand-card-title" id="titatecCardTitle">Illuminating Retail Spaces</h3>
+            <p class="brand-card-desc" id="titatecCardDesc">TITATEC is the professional retail lighting brand...</p>
+            <div class="brand-card-features" id="titatecFeatures"></div>
+            <a href="https://shop.gondolalights.com" target="_blank" rel="noopener" class="brand-card-link titatec" id="titatecLink">
+              Visit TITATEC Store
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="section products-section" id="products">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow" id="productsEyebrow">Featured Products</div>
+        <h2 class="section-title" id="productsTitle">Best-Selling Hardware</h2>
+        <p class="section-desc" id="productsDesc">Curated selection from both brand lines...</p>
+      </div>
+      <div class="products-tabs">
+        <button class="product-tab active vivileo" onclick="filterProducts('all')">All Products</button>
+        <button class="product-tab" onclick="filterProducts('vivileo')">VIVILEO EV chargers</button>
+        <button class="product-tab" onclick="filterProducts('titatec')">TITATEC Gondola Lighting</button>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section class="section solutions-section" id="solutions">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow" id="solutionsEyebrow">Solutions</div>
+        <h2 class="section-title" id="solutionsTitle">Built for Your Industry</h2>
+        <p class="section-desc" id="solutionsDesc">From residential driveways to national supermarket chains...</p>
+      </div>
+      <div class="solutions-grid" id="solutionsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Why Capitec -->
+  <section class="section why-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow" id="whyEyebrow">Why Capitec Inc</div>
+        <h2 class="section-title" id="whyTitle">The Company Behind Both Brands</h2>
+        <p class="section-desc" id="whyDesc">North America-based operations with direct wholesale supply...</p>
+      </div>
+      <div class="why-grid" id="whyGrid"></div>
+    </div>
+  </section>
+
+  <!-- About Strip -->
+  <section class="about-strip" id="about">
+    <div class="about-inner">
+      <div class="about-label" id="aboutLabel">About Capitec Inc</div>
+      <p class="about-text" id="aboutText">
+        Capitec Inc is a North America-based enterprise focusing on commercial energy hardware and professional lighting systems...
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact-section" id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3 id="contactTitle">Let's Talk Business</h3>
+          <p id="contactDesc">Whether you need EV charging equipment...</p>
+          <div id="contactDetails"></div>
+        </div>
+      <div class="contact-form" style="padding: 0; overflow: hidden; border: 1px solid var(--gray-200); border-radius: 14px; background: var(--white); box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+  <iframe 
+    src="https://docs.google.com/forms/d/e/1FAIpQLSeDbL1GXc7u7w1VRcK15Qp6CF_aIrtYC474HadISFuDsHpW5w/viewform?usp=header" 
+    width="100%" 
+    height="520" 
+    frameborder="0" 
+    marginheight="0" 
+    marginwidth="0"
+    style="display: block; width: 100%; height: 520px; border: none; background: transparent;">
+    加载中…
+  </iframe>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name" id="footerBrandName">Capitec Inc</div>
+          <p class="footer-brand-desc" id="footerBrandDesc">North America-based enterprise building and managing a portfolio...</p>
+          <div class="footer-brands">
+            <span class="footer-brand-pill vivileo">VIVILEO</span>
+            <span class="footer-brand-pill titatec">TITATEC</span>
+          </div>
+        </div>
+        <div class="footer-col"><h4>VIVILEO</h4><ul id="footerVivileoLinks"></ul></div>
+        <div class="footer-col"><h4>TITATEC</h4><ul id="footerTitatecLinks"></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul id="footerCompanyLinks"></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright" id="footerCopyright">&copy; 2026 Capitec Inc. All rights reserved.</div>
+        <div class="footer-legal" id="footerLegal"></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ================================================================
+    //  🟢 您只需要修改这个 CONFIG 对象，页面所有内容会自动更新  🟢
+    // ================================================================
+    const CONFIG = {
+      // ---- 公司基本信息 ----
+      company: {
+        name: 'Capitec Inc',
+        shortName: 'Capitec Inc',
+        region: 'North America',
+        tagline: 'North America-based enterprise building and managing a portfolio of specialized vertical brands, including VIVILEO EV charging and TITATEC commercial LED lighting.',
+        copyright: '© 2023-2026 Capitec Inc. All rights reserved.'
+      },
+
+      // ---- 顶部公告栏（数组） ----
+      announce: [
+        'Free delivery for orders over $99',
+        '24/7 Dedicated support',
+        '100% secure payment',
+        '90-day hassle-free returns'
+      ],
+
+      // ---- 导航 ----
+      nav: {
+        cta: 'Get Installation Support'
+      },
+
+      // ---- 所有图片链接（您只需改这里的链接） ----
+      images: {
+        // Hero 背景图
+        heroVivileo: 'https://aka.doubaocdn.com/s/L7BwCUTTJb',
+        heroTitatec: 'https://aka.doubaocdn.com/s/VTlTIU04s6',
+        // 品牌卡片背景图
+        cardVivileo: 'assets/images/VIVILEO-brand1920-1080.webp',
+        cardTitatec: 'assets/images/titatec-brand1920-1080.webp',
+        // 产品占位图（统一使用同一张，您可单独替换）
+        productPlaceholder: 'https://aka.doubaocdn.com/s/h3rcQ5ieVh',
+        lightingPlaceholder: 'https://aka.doubaocdn.com/s/LwGbSGlu4B'
+      },
+
+      // ---- Hero 区域文案 ----
+      hero: {
+        vivileo: {
+          title: 'VIVILEO<br>EV Charging',
+          desc: 'Reliable home and commercial EV charging stations. From portable chargers to high-power DC modules, engineered for North American properties and businesses.',
+          cta: 'Explore VIVILEO Chargers'
+        },
+        titatec: {
+          title: 'TITATEC<br>Gondola Lighting',
+          desc: 'Professional gondola shelf LED lighting and custom illumination solutions for supermarket operators, retail chains and wholesale distributors across North America..',
+          cta: 'Discover TITATEC Lighting'
+        }
+      },
+
+      // ---- "Our Brands" 区域 ----
+      brands: {
+        eyebrow: 'Our Brands',
+        title: 'Two Specialized Brands,<br>One Trusted Company',
+        desc: 'Capitec Inc builds and manages a growing portfolio of specialized vertical brands. VIVILEO is our in-house flagship brand, while TITATEC is operated under license. Both lines are engineered for their respective industries, backed by unified supply chain, compliance and after-sales support.'
+      },
+
+      // ---- 品牌详情（VIVILEO） ----
+      vivileo: {
+        tag: 'EV Charging Solutions',
+        title: 'Powering the EV Transition',
+        desc: 'VIVILEO is the EV charging hardware brand of Capitec Inc. We deliver reliable charging equipment for residential properties, parking operators and small businesses across North America.',
+        features: [
+          'Portable & wall-mount chargers (7kW – 11kW)',
+          'DC fast-charge modules (20kW – 30kW)',
+          'ETL / FCC certified, NEC compliant',
+          'Smart app control ( Wi-Fi / Bluetooth)'
+        ],
+        linkText: 'View VIVILEO Store',
+        linkUrl: 'https://www.amazon.com/stores/ViViLEO%7CReliableUSEVChargingSolutions/page/CD6B9D2D-7D39-41B7-AA1F-8983ABBAA475?lp_asin=B0G4V9HJMD&ref_=ast_bln'
+      },
+
+      // ---- 品牌详情（TITATEC） ----
+      titatec: {
+        tag: 'Retail LED Lighting',
+        title: 'Illuminating Retail Spaces',
+        desc: ' TITATEC is a professional retail lighting brand operated under license by Capitec Inc. We design and manufacture high-performance gondola shelf LED lighting and custom LED solutions for supermarket operators, retail chains and wholesale distributors across North America.',
+        features: [
+          'Gondola shelf LED lighting systems',
+          'Cabinet & display case lighting',
+          'Custom project design & OEM',
+          'UL certified, Meanwell LED drivers'
+        ],
+        linkText: 'Visit TITATEC Store',
+        linkUrl: 'https://shop.gondolalights.com'
+      },
+
+      // ---- 产品列表（增删改这里） ----
+      products: [{
+        brand: 'vivileo',
+        name: 'Level 2 EV Charger 40A Hardwired 240V ETL CEC Black',
+        specs: 'Hardwired 240V, IP65 weatherproof, 25ft cable, J1772+NACS adapter, WiFi app, ETL & CEC certified. 3-yr warranty.',
+        image: 'assets/images/product-wall-11KW800-800.webp',
+        btnText: 'Buy on Amazon',
+        btnLink: 'https://www.amazon.com/dp/B0H7WG6K1V'
+      }, {
+        brand: 'vivileo',
+        name: 'Commercial Grade Level 2 EV Charger-48A 11.5kW Fast Charging',
+        specs: 'ETL Listed, Hardwired, 25ft Cable, J1772 with NACS Adapter for Tesla, Smart App Control, IP65 Weatherproof for Business Use',
+        image: 'assets/images/commercial-11KW-800-800.webp',
+        btnText: 'Buy on Amazon',
+        btnLink: 'https://www.amazon.com/dp/B0F38JLZSP'
+      }, {
+        brand: 'vivileo',
+        name: 'Portable EV Charger Max 32A Level 1&2 J1772 NACS ETL',
+        specs: '12-32A adjustable, 25ft cable, NEMA 14-50 plug, WiFi app, J1772+NACS, IP65, ETL & FCC certified. 3-yr warranty.',
+        image: 'assets/images/product-portable800-800.webp',
+        btnText: 'Buy on Amazon',
+        btnLink: 'https://www.amazon.com/dp/B0F3VPS7LY'
+      }, {
+        brand: 'vivileo',
+        name: 'Portable EV Charger 30A Level 1&2 NACS J1772 ETL WiFi',
+        specs: 'Charging Wherever You Are via Portable · ETL Certified · 3-Year Coverage · Adapter for Tesla & All J1772 EVs',
+        image: 'assets/images/product-ford800-800.webp',
+        btnText: 'Buy on Amazon',
+        btnLink: 'https://www.amazon.com/Portable-Chargers-Connector-Included-Compliant/dp/B0H7VXVJ1Y?ref_=ast_sto_dp&th=1'
+      }, {
+        brand: 'titatec',
+        name: '36 inch 8 Pack Gondola Shelf Lighting Kit, 4200K Natural White',
+        specs: 'Natural white 4200K for food & fresh displays. Fits Lozier & Madix. UL-listed 24V. CRI 90. 50,000-hr lifespan.',
+        image: 'assets/images/8pack-4200K-800-800.webp',
+        btnText: 'Shop on TITATEC Store',
+        btnLink: 'https://shop.gondolalights.com/en-us/products/gondola-shelving-lights-kit-inclueds-8-pcs-3ft-4200k-natural-white-led-light-bars-led-driver-and-accessories-for-super-market-liquor-store-business-shelves-via-magnets-to-install-368pcs'
+      }, {
+        brand: 'titatec',
+        name: '48 inch 8 pack Retail Gondola Light Kit, 6000K Cool White',
+        specs: 'with 24V Driver and Power Tracks for Retail, Supermarket, Liquor & Gas Station Shelves',
+        image: 'assets/images/8pack-6000K-800-800.webp',
+        btnText: 'Shop on TITATEC Store',
+        btnLink: 'https://shop.gondolalights.com/en-us/products/titatec-retail-liquor-shelving-lights-kit'
+      }, {
+        brand: 'titatec',
+        name: '24V 80W Meanwell Driver for Gondola Shelving Light Kits',
+        specs: 'UL-listed Meanwell 80W driver, PT19 connector, powers up to 5 gondola kits. 110-240V input, 24V DC output. Plug & play',
+        image: 'assets/images/LED-driver-800-800.webp',
+        btnText: 'Shop on TITATEC Store',
+        btnLink: 'https://shop.gondolalights.com/en-us/collections/accessories'
+      }, {
+        brand: 'titatec',
+        name: 'Single LED Light Bar 45" 6000K for Shelving',
+        specs: 'Magnetic mount, no tools. 6000K white for gondola & retail displays. Commercial 50K-hr, 24V DC. Replacement available.',
+        image: 'assets/images/single-bar-800-800.webp',
+        btnText: 'Shop on TITATEC Store',
+        btnLink: 'https://shop.gondolalights.com/en-us/collections/single-led-light-bar01'
+      }],
+
+      // ---- 解决方案 ----
+      solutions: {
+        eyebrow: 'Solutions',
+        title: 'Built for Your Industry',
+        desc: 'From residential driveways to national supermarket chains, our brands deliver purpose-built solutions for commercial-scale deployment.',
+        items: [{
+          brand: 'vivileo',
+          title: 'EV Charging Solutions',
+          desc: 'Complete charging infrastructure for properties and businesses of every scale.',
+          list: [
+            'Residential home charging installations',
+            'Apartment & condo parking lots',
+            'Commercial fleet & dealership charging',
+            'DC fast-charge station build-outs',
+            'Professional installation (LA & Orange County)'
+          ]
+        }, {
+          brand: 'titatec',
+          title: 'Retail Lighting Solutions',
+          desc: 'Engineered illumination systems that elevate product visibility and reduce energy costs.',
+          list: [
+            'Supermarket gondola shelf lighting',
+            'Chain store roll-out programs',
+            'Refrigerated & freezer case lighting',
+            'Display case & cabinet illumination',
+            'Custom OEM & private label programs'
+          ]
+        }]
+      },
+
+      // ---- Why Capitec ----
+      why: {
+        eyebrow: 'Why Capitec Inc',
+        title: 'The Company Behind Both Brands',
+        desc: 'North America-based operations with direct wholesale supply, strict compliance and local after-sales support.',
+        items: [{
+          title: 'North American Operations',
+          desc: 'California-based company with local warehousing, support and distribution across the US.'
+        }, {
+          title: 'B2B Wholesale Supply',
+          desc: 'Direct bulk pricing for distributors, contractors and retail chain procurement teams.'
+        }, {
+          title: 'Certified & Compliant',
+          desc: 'UL, ETL, FCC certified products. Full compliance with NEC and North American safety standards.'
+        }, {
+          title: 'Local After-Sales',
+          desc: 'Dedicated support team, 90-day returns, and professional installation services in Southern California.'
+        }]
+      },
+
+      // ---- About 文案 ----
+      about: {
+        label: 'About Capitec Inc',
+        text: 'Capitec Inc is a North America-based enterprise focusing on commercial energy hardware and professional lighting systems. We build and manage a portfolio of specialized vertical brands — with <span class="brand-v">VIVILEO</span> as our in-house flagship brand and <span class="brand-t">TITATEC</span> as a licensed-operated retail lighting line — and continue to develop additional focused brands and product series to serve evolving market demands.<br><br>Our team provides direct wholesale supply, project customization and local after-sales support across the United States, combining strict product compliance, a stable global supply chain and <strong>B2B-focused service</strong> for distributors, retailers and commercial buyers.'
+      },
+
+      // ---- 联系信息 ----
+      contact: {
+        title: 'Let\'s Talk Business',
+        desc: 'Whether you need EV charging equipment for a property development or a full retail lighting rollout, our team is ready to provide wholesale pricing, project quotes and technical support.',
+        details: [{
+          icon: 'location',
+          label: 'Headquarters',
+          value: '2441N Ste H, Tustin Ave,Santa Ana, California, CA92705'
+        }, {
+          icon: 'email',
+          label: 'Email',
+          value: ' James@capitecinc.com'
+        }, {
+          icon: 'phone',
+          label: 'Phone',
+          value: 'Mon–Fri, 9:00 AM – 6:00 PM PT'
+        }]
+      },
+
+      // ---- 页脚 ----
+      footer: {
+        brandDesc: 'North America-based enterprise building and managing specialized vertical brands: VIVILEO EV charging equipment and TITATEC gondola LED shelf lighting systems',
+        vivileoLinks: [
+          { text: 'Portable Chargers', url: 'https://www.amazon.com/dp/B0F3VPS7LY?th=1' },
+          { text: 'Fast chargers', url: 'https://www.amazon.com/dp/B0H7WG6K1V' },
+          { text: 'Adapters', url: '#products' },
+          { text: 'Installation service', url: 'https://docs.google.com/forms/d/e/1FAIpQLSeDbL1GXc7u7w1VRcK15Qp6CF_aIrtYC474HadISFuDsHpW5w/viewform?usp=header' }
+        ],
+        titatecLinks: [
+          { text: 'Official Store', url: 'https://shop.gondolalights.com' },
+          { text: 'Gondola Lighting', url: 'https://shop.gondolalights.com/en-us/collections/gondola-light-kits' },
+          { text: 'Custom Projects', url: 'https://www.gondolalights.com' },
+          { text: 'Wholesale Inquiry', url: 'https://docs.google.com/forms/d/e/1FAIpQLSejflnYaO8z2HbGEagVTOgCCbBlI-mEJod5diPDhctlDLZcXA/viewform?usp=header' }
+        ],
+        companyLinks: [
+          { text: 'About Us', url: '#about' },
+          { text: 'Contact', url: '#contact' },
+          { text: 'Get Support', url: 'https://docs.google.com/forms/d/e/1FAIpQLSeDbL1GXc7u7w1VRcK15Qp6CF_aIrtYC474HadISFuDsHpW5w/viewform?usp=header' },
+          { text: 'Blog & News', url: '#' }
+        ],
+        legal: [
+          { text: 'Privacy Policy', url: 'privacy-policy.html' },
+          { text: 'Terms of Service', url: ' terms-of-service.html' },
+          { text: 'Shipping & Returns', url: 'shipping-and-return.html' }
+        ]
+      }
+    };
+
+    // ================================================================
+    //  渲染引擎（将 CONFIG 数据填充到页面中）
+    // ================================================================
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. 公告栏
+      const announceContainer = document.getElementById('announceContainer');
+      announceContainer.innerHTML = CONFIG.announce.map(text =>
+        `<div class="announce-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          ${text}
+        </div>`
+      ).join('');
+
+      // 2. 导航
+      document.getElementById('navBrandName').textContent = CONFIG.company.name;
+      document.getElementById('navCtaText').textContent = CONFIG.nav.cta;
+
+      // 3. Hero 背景 & 文案
+      document.getElementById('heroBgVivileo').style.backgroundImage = `url('${CONFIG.images.heroVivileo}')`;
+      document.getElementById('heroBgTitatec').style.backgroundImage = `url('${CONFIG.images.heroTitatec}')`;
+      document.getElementById('heroTitleVivileo').innerHTML = CONFIG.hero.vivileo.title;
+      document.getElementById('heroDescVivileo').textContent = CONFIG.hero.vivileo.desc;
+      document.getElementById('heroCtaVivileo').innerHTML = `${CONFIG.hero.vivileo.cta} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+      document.getElementById('heroTitleTitatec').innerHTML = CONFIG.hero.titatec.title;
+      document.getElementById('heroDescTitatec').textContent = CONFIG.hero.titatec.desc;
+      document.getElementById('heroCtaTitatec').innerHTML = `${CONFIG.hero.titatec.cta} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+      document.getElementById('badgeCompanyName').textContent = CONFIG.company.name;
+      document.getElementById('badgeCompanyRegion').textContent = CONFIG.company.region;
+
+      // 4. Brands 标题
+      document.getElementById('brandsEyebrow').textContent = CONFIG.brands.eyebrow;
+      document.getElementById('brandsTitle').innerHTML = CONFIG.brands.title;
+      document.getElementById('brandsDesc').textContent = CONFIG.brands.desc;
+
+      // 5. VIVILEO 品牌卡片
+      document.getElementById('vivileoCardBg').style.backgroundImage = `url('${CONFIG.images.cardVivileo}')`;
+      document.getElementById('vivileoTag').textContent = CONFIG.vivileo.tag;
+      document.getElementById('vivileoCardTitle').textContent = CONFIG.vivileo.title;
+      document.getElementById('vivileoCardDesc').textContent = CONFIG.vivileo.desc;
+      document.getElementById('vivileoLink').innerHTML = `${CONFIG.vivileo.linkText} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+      document.getElementById('vivileoLink').href = CONFIG.vivileo.linkUrl;
+      document.getElementById('vivileoFeatures').innerHTML = CONFIG.vivileo.features.map(f =>
+        `<div class="brand-card-feature vivileo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          ${f}
+        </div>`
+      ).join('');
+
+      // 6. TITATEC 品牌卡片
+      document.getElementById('titatecCardBg').style.backgroundImage = `url('${CONFIG.images.cardTitatec}')`;
+      document.getElementById('titatecTag').textContent = CONFIG.titatec.tag;
+      document.getElementById('titatecCardTitle').textContent = CONFIG.titatec.title;
+      document.getElementById('titatecCardDesc').textContent = CONFIG.titatec.desc;
+      document.getElementById('titatecLink').innerHTML = `${CONFIG.titatec.linkText} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+      document.getElementById('titatecLink').href = CONFIG.titatec.linkUrl;
+      document.getElementById('titatecFeatures').innerHTML = CONFIG.titatec.features.map(f =>
+        `<div class="brand-card-feature titatec">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg>
+          ${f}
+        </div>`
+      ).join('');
+
+      // 7. 产品列表
+      const productGrid = document.getElementById('productGrid');
+      productGrid.innerHTML = CONFIG.products.map(p => `
+        <div class="product-card" data-brand="${p.brand}">
+          <div class="product-card-image"><img src="${p.image}" alt="${p.name}"></div>
+          <div class="product-card-body">
+            <div class="product-card-brand ${p.brand}">${p.brand.toUpperCase()}</div>
+            <h3 class="product-card-name">${p.name}</h3>
+            <div class="product-card-specs">${p.specs}</div>
+            <div class="product-card-footer">
+              <a href="${p.btnLink}" target="${p.btnLink.startsWith('http') ? '_blank' : '_self'}" rel="noopener" class="product-card-btn ${p.brand}" style="width:100%;justify-content:center;text-align:center;">${p.btnText}</a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // 8. 解决方案
+      document.getElementById('solutionsEyebrow').textContent = CONFIG.solutions.eyebrow;
+      document.getElementById('solutionsTitle').textContent = CONFIG.solutions.title;
+      document.getElementById('solutionsDesc').textContent = CONFIG.solutions.desc;
+      const solutionsGrid = document.getElementById('solutionsGrid');
+      solutionsGrid.innerHTML = CONFIG.solutions.items.map(s => `
+        <div class="solution-card">
+          <div class="solution-icon ${s.brand}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 class="solution-title">${s.title}</h3>
+          <p class="solution-desc">${s.desc}</p>
+          <div class="solution-list">
+            ${s.list.map(item => `<div class="solution-list-item ${s.brand}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>${item}</div>`).join('')}
+          </div>
+        </div>
+      `).join('');
+
+      // 9. Why 区域
+      document.getElementById('whyEyebrow').textContent = CONFIG.why.eyebrow;
+      document.getElementById('whyTitle').textContent = CONFIG.why.title;
+      document.getElementById('whyDesc').textContent = CONFIG.why.desc;
+      document.getElementById('whyGrid').innerHTML = CONFIG.why.items.map(w => `
+        <div class="why-card">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <h3 class="why-title">${w.title}</h3>
+          <p class="why-desc">${w.desc}</p>
+        </div>
+      `).join('');
+
+      // 10. About
+      document.getElementById('aboutLabel').textContent = CONFIG.about.label;
+      document.getElementById('aboutText').innerHTML = CONFIG.about.text;
+
+      // 11. Contact
+      document.getElementById('contactTitle').textContent = CONFIG.contact.title;
+      document.getElementById('contactDesc').textContent = CONFIG.contact.desc;
+      const contactDetails = document.getElementById('contactDetails');
+      contactDetails.innerHTML = CONFIG.contact.details.map(d => `
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-detail-text"><h4>${d.label}</h4><p>${d.value}</p></div>
+        </div>
+      `).join('');
+
+      // 12. Footer
+      document.getElementById('footerBrandName').textContent = CONFIG.company.name;
+      document.getElementById('footerBrandDesc').textContent = CONFIG.footer.brandDesc;
+      document.getElementById('footerCopyright').textContent = CONFIG.company.copyright;
+
+      document.getElementById('footerVivileoLinks').innerHTML = CONFIG.footer.vivileoLinks.map(l => `<li><a href="${l.url}">${l.text}</a></li>`).join('');
+      document.getElementById('footerTitatecLinks').innerHTML = CONFIG.footer.titatecLinks.map(l => `<li><a href="${l.url}">${l.text}</a></li>`).join('');
+      document.getElementById('footerCompanyLinks').innerHTML = CONFIG.footer.companyLinks.map(l => `<li><a href="${l.url}">${l.text}</a></li>`).join('');
+      document.getElementById('footerLegal').innerHTML = CONFIG.footer.legal.map(l => `<a href="${l.url}">${l.text}</a>`).join('');
+    });
+
+    // 产品筛选功能（保持不变）
+    function filterProducts(brand) {
+      const cards = document.querySelectorAll('.product-card');
+      const tabs = document.querySelectorAll('.product-tab');
+      tabs.forEach(t => { t.classList.remove('active', 'vivileo', 'titatec'); });
+      if (event && event.target) {
+        event.target.classList.add('active');
+        if (brand === 'vivileo') event.target.classList.add('vivileo');
+        if (brand === 'titatec') event.target.classList.add('titatec');
+      }
+      cards.forEach(card => {
+        card.style.display = (brand === 'all' || card.dataset.brand === brand) ? '' : 'none';
+      });
+    }
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) { e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+  </script>
+
+</body>
+</html>
