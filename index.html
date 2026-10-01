@@ -748,6 +748,8 @@
     }
     .solution-card:hover {
   border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+  transition: border-color 0.25s, transform 0.25s;
   /* background 删除，避免覆盖背景图 */
 }
     .solution-icon {
@@ -1188,9 +1190,9 @@
       inset: 0;
       background: linear-gradient(
         120deg,
-        rgba(10, 22, 40, 0.92) 0%,
-        rgba(10, 22, 40, 0.78) 55%,
-        rgba(10, 22, 40, 0.58) 100%
+        rgba(10, 22, 40, 0.75) 0%,
+        rgba(10, 22, 40, 0.55) 55%,
+        rgba(10, 22, 40, 0.30) 100%
       );
       z-index: 0;
       pointer-events: none;
