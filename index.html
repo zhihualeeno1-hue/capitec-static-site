@@ -47,6 +47,7 @@
 </script>
 </head>
   <style>
+    
     /* ===== 此处省略原有完整 CSS（保持不变） ===== */
     /* 为了节省篇幅，请直接复用您提供的 <style> 中所有代码，一字不改 */
     /* 但为了本方案能独立运行，我已在下方完整保留您原有的所有样式 */
@@ -746,9 +747,9 @@
       transition: background 0.25s, border-color 0.25s;
     }
     .solution-card:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.2);
-    }
+  border-color: rgba(255, 255, 255, 0.2);
+  /* background 删除，避免覆盖背景图 */
+}
     .solution-icon {
       width: 48px;
       height: 48px;
@@ -1171,6 +1172,48 @@
         font-size: 20px;
       }
     }
+        /* ===== Solutions 卡片：加背景图 ===== */
+    .solution-card {
+      position: relative;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #0A1628;
+    }
+
+    .solution-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        rgba(10, 22, 40, 0.92) 0%,
+        rgba(10, 22, 40, 0.78) 55%,
+        rgba(10, 22, 40, 0.58) 100%
+      );
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .solution-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .solution-card[data-brand="vivileo"] {
+      background-image: url('assets/images/solution-vivileo.webp');
+    }
+
+    .solution-card[data-brand="titatec"] {
+      background-image: url('assets/images/solution-titatec.webp');
+    }
+
+    @media (max-width: 1024px) {
+      .solution-card::before {
+        background: rgba(10, 22, 40, 0.85);
+      }
+    }
   </style>
 </head>
 <body>
@@ -1405,7 +1448,7 @@
         </div>
         <div class="contact-detail-text">
             <h4>Email</h4>
-            <p><a href="mailto:James@capitecinc.com" style="color: inherit; text-decoration: none; cursor: pointer; transition: color 0.2s;" onmouseover="this.style.color='#00D4AA'" onmouseout="this.style.color='inherit'">James@capitecinc.com</a></p>
+            <p><a href="mailto:contact@capitecinc.com" style="color: inherit; text-decoration: none; cursor: pointer; transition: color 0.2s;" onmouseover="this.style.color='#00D4AA'" onmouseout="this.style.color='inherit'">contact@capitecinc.com</a></p>
         </div>
     </div>
 
@@ -1495,7 +1538,7 @@
         // 品牌卡片背景图
         cardVivileo: 'assets/images/VIVILEO-brand1920-1080.webp',
         cardTitatec: 'assets/images/titatec-brand1920-1080.webp',
-        // 产品占位图（统一使用同一张，您可单独替换）
+        // 品牌占位图：productPlaceholder=VIVILEO，lightingPlaceholder=TITATEC
         productPlaceholder: 'assets/images/capitec-vivileo-left.webp',
         lightingPlaceholder: 'assets/images/capitec-titatec-right.webp'
       },
@@ -1700,7 +1743,7 @@
         }, {
           icon: 'email',
           label: 'Email',
-          value: ' James@capitecinc.com'
+          value: ' contact@capitecinc.com'
         }, {
           icon: 'phone',
           label: 'Phone',
@@ -1821,7 +1864,7 @@
       document.getElementById('solutionsDesc').textContent = CONFIG.solutions.desc;
       const solutionsGrid = document.getElementById('solutionsGrid');
       solutionsGrid.innerHTML = CONFIG.solutions.items.map(s => `
-        <div class="solution-card">
+        <div class="solution-card" data-brand="${s.brand}">
             <div class="solution-icon ${s.brand}">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="${s.brand === 'titatec' ? 'M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2h6c0-.8.4-1.5 1-2A7 7 0 0 0 12 2z' : 'M13 2L3 14h9l-1 8 10-12h-9l1-8z'}"/></svg>
             </div>
