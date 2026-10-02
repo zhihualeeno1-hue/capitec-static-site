@@ -1,29 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- 首页 -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://capitecinc.com/</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-10-02</lastmod>
   </url>
-  <!-- 政策页面 -->
+
   <url>
     <loc>https://capitecinc.com/privacy-policy.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-02</lastmod>
   </url>
+
   <url>
     <loc>https://capitecinc.com/terms-of-service.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-02</lastmod>
   </url>
+
   <url>
     <loc>https://capitecinc.com/shipping-and-return.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-02</lastmod>
   </url>
 </urlset>
