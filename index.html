@@ -1388,7 +1388,180 @@ html.capitec-quote-open {
     max-height: 100dvh;
     border-radius: 0;
   }
-}  
+}  /* 桌面端：联系表单与左侧整栏等高 */
+@media (min-width: 1025px) {
+  #contact .contact-grid {
+    align-items: stretch;
+  }
+
+  #contact .contact-grid > .contact-form {
+    position: relative;
+    align-self: stretch;
+  }
+
+  #contact .contact-grid > .contact-form > iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100% !important;
+    display: block;
+    border: 0;
+  }
+}/* ===== 页脚折叠标题 ===== */
+.footer .cap-footer-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  cursor: default;
+}
+
+.footer .cap-footer-toggle::after {
+  display: none;
+}
+
+.footer .cap-footer-toggle:focus-visible {
+  outline: 2px solid #FFD24A;
+  outline-offset: 3px;
+}
+
+/* ===== 手机端页脚折叠 ===== */
+@media (max-width: 768px) {
+  .footer .footer-top {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-bottom: 28px;
+  }
+
+  .footer .footer-top > div:first-child {
+    margin-bottom: 24px;
+  }
+
+  .footer .footer-col.cap-footer-ready {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .footer .cap-footer-ready h4 {
+    margin: 0;
+  }
+
+  .footer .cap-footer-toggle {
+    min-height: 52px;
+    padding: 16px 0;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .footer .cap-footer-toggle::after {
+    display: block;
+    flex-shrink: 0;
+    margin-left: 16px;
+    content: "+";
+    color: #FFD24A;
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .footer .cap-footer-open .cap-footer-toggle::after {
+    content: "−";
+  }
+
+  .footer .cap-footer-ready > ul {
+    display: none;
+    margin: 0;
+    padding: 0 0 16px;
+    list-style: none;
+  }
+
+  .footer .cap-footer-ready.cap-footer-open > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .footer .cap-footer-ready > ul a {
+    display: block;
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}/* 公告暂停按钮：桌面端隐藏 */
+.announce-bar .cap-announce-pause {
+  display: none;
+}
+
+/* 手机端公告栏 */
+@media (max-width: 768px) {
+  .announce-bar {
+    padding: 0;
+  }
+
+  .announce-bar #announceContainer {
+    height: 36px;
+    padding: 0 12px;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .announce-bar .announce-item {
+    min-width: 0;
+    gap: 6px;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  .announce-bar .announce-item:not(:first-child) {
+    display: none;
+  }
+
+  .announce-bar .cap-announce-ready .announce-item {
+    display: none;
+  }
+
+  .announce-bar .cap-announce-ready .announce-item.cap-announce-active {
+    display: flex;
+  }
+
+  .announce-bar .cap-announce-pause {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .announce-bar .cap-announce-pause:focus-visible {
+    outline: 2px solid #FFD24A;
+    outline-offset: 1px;
+  }
+}
+
+@media (max-width: 360px) {
+  .announce-bar .announce-item {
+    font-size: 11px;
+  }
+}
   </style>
 </head>
 <body>
@@ -2207,6 +2380,156 @@ html.capitec-quote-open {
     document.documentElement.classList.remove("capitec-quote-open");
     openButton.focus();
   });
+})();
+</script>
+  <!-- 手机端页脚折叠 -->
+<script>
+(function () {
+  function initFooterAccordion() {
+    const mobileQuery = window.matchMedia("(max-width: 768px)");
+    const columns = document.querySelectorAll(
+      ".footer .footer-top > .footer-col"
+    );
+
+    columns.forEach(function (column) {
+      const heading = column.querySelector("h4");
+      const list = column.querySelector("ul");
+
+      if (!heading || !list || !list.id) return;
+      if (column.classList.contains("cap-footer-ready")) return;
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "cap-footer-toggle";
+      button.textContent = heading.textContent.trim();
+      button.setAttribute("aria-controls", list.id);
+
+      heading.replaceChildren(button);
+      column.classList.add("cap-footer-ready");
+
+      function syncLayout() {
+        // 手机端默认收起；桌面端由原有 CSS 展开。
+        column.classList.remove("cap-footer-open");
+
+        button.setAttribute(
+          "aria-expanded",
+          mobileQuery.matches ? "false" : "true"
+        );
+
+        button.tabIndex = mobileQuery.matches ? 0 : -1;
+      }
+
+      button.addEventListener("click", function () {
+        if (!mobileQuery.matches) return;
+
+        const expanded = column.classList.toggle("cap-footer-open");
+        button.setAttribute("aria-expanded", String(expanded));
+      });
+
+      mobileQuery.addEventListener("change", syncLayout);
+      syncLayout();
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      initFooterAccordion,
+      { once: true }
+    );
+  } else {
+    initFooterAccordion();
+  }
+})();
+</script>
+  <!-- 手机端公告轮播 -->
+<script>
+(function () {
+  function initAnnouncements() {
+    const container = document.getElementById("announceContainer");
+    if (!container || container.classList.contains("cap-announce-ready")) {
+      return;
+    }
+
+    const items = Array.from(
+      container.querySelectorAll(".announce-item")
+    );
+    if (items.length < 2) return;
+
+    const mobile = window.matchMedia("(max-width: 768px)");
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+    let current = 0;
+    let timer = null;
+    let paused = reducedMotion.matches;
+
+    const pauseButton = document.createElement("button");
+    pauseButton.type = "button";
+    pauseButton.className = "cap-announce-pause";
+    container.appendChild(pauseButton);
+
+    function showItem(index) {
+      items.forEach(function (item, position) {
+        item.classList.toggle(
+          "cap-announce-active",
+          position === index
+        );
+      });
+    }
+
+    function updateButton() {
+      pauseButton.textContent = paused ? "▶" : "Ⅱ";
+      pauseButton.setAttribute(
+        "aria-label",
+        paused ? "Resume announcements" : "Pause announcements"
+      );
+    }
+
+    function updateTimer() {
+      window.clearInterval(timer);
+      timer = null;
+
+      if (!mobile.matches || paused || document.hidden) return;
+
+      timer = window.setInterval(function () {
+        current = (current + 1) % items.length;
+        showItem(current);
+      }, 5000);
+    }
+
+    pauseButton.addEventListener("click", function () {
+      paused = !paused;
+      updateButton();
+      updateTimer();
+    });
+
+    mobile.addEventListener("change", updateTimer);
+
+    reducedMotion.addEventListener("change", function () {
+      paused = reducedMotion.matches;
+      updateButton();
+      updateTimer();
+    });
+
+    document.addEventListener("visibilitychange", updateTimer);
+
+    showItem(current);
+    container.classList.add("cap-announce-ready");
+    updateButton();
+    updateTimer();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      initAnnouncements,
+      { once: true }
+    );
+  } else {
+    initAnnouncements();
+  }
 })();
 </script>
 </body>
