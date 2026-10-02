@@ -1217,6 +1217,178 @@
         background: rgba(10, 22, 40, 0.85);
       }
     }
+  /* 报价引导卡片 */
+#capitecEstimateCard {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 28px;
+  padding: 28px;
+  background: #0B1B2B;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+}
+
+#capitecEstimateCard .estimate-badge {
+  display: block;
+  margin-bottom: 12px;
+  color: #FFD24A;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+#capitecEstimateCard h3 {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.25;
+}
+
+#capitecEstimateCard .estimate-description {
+  margin: 0 0 18px;
+  color: #C9D6E5;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+#capitecEstimateCard .estimate-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-bottom: 20px;
+  padding: 12px 0;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#capitecEstimateButton {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 14px 18px;
+  color: #0B1B2B;
+  background: #FFD24A;
+  border: 0;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+#capitecEstimateButton:hover {
+  background: #F4BE22;
+}
+
+#capitecEstimateButton:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+#capitecEstimateCard .estimate-note {
+  margin: 12px 0 0;
+  color: #B8C5D6;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* 报价器弹窗 */
+html.capitec-quote-open {
+  overflow: hidden;
+}
+
+#capitecQuoteModal {
+  position: fixed;
+  inset: 0;
+  box-sizing: border-box;
+  width: min(1100px, 92vw);
+  max-width: 92vw;
+  height: 85vh;
+  max-height: 90vh;
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 0;
+  border-radius: 16px;
+}
+
+#capitecQuoteModal[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+#capitecQuoteModal::backdrop {
+  background: rgba(10, 22, 40, 0.78);
+}
+
+#capitecQuoteModal .capitec-quote-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  color: #fff;
+  background: #0B1B2B;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#capitecQuoteClose {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#capitecQuoteClose:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+#capitecQuoteFrame {
+  display: block;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  border: 0;
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  #capitecEstimateCard {
+    padding: 24px 20px;
+  }
+
+  #capitecEstimateCard .estimate-steps {
+    flex-direction: column;
+  }
+
+  #capitecQuoteModal {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100vh;
+    max-height: 100dvh;
+    border-radius: 0;
+  }
+}  
   </style>
 </head>
 <body>
@@ -1443,6 +1615,7 @@
             <h4>Headquarters</h4>
             <p>2441N Ste H, Tustin Ave,Santa Ana, California, CA92705</p>
         </div>
+      
     </div>
 
     <div class="contact-detail">
@@ -1464,6 +1637,37 @@
             <p>Mon-Fri, 9:00 AM – 6:00 PM PT</p>
         </div>
     </div>
+</div>
+          <!-- TITATEC 报价器引导卡片 -->
+<div id="capitecEstimateCard">
+  <span class="estimate-badge">TITATEC SHELF-LIGHTING ESTIMATES</span>
+
+  <h3>Get an estimate from your shelf layout</h3>
+
+  <p class="estimate-description">
+    Enter shelf widths and illuminated levels to estimate a standard
+    shelf-lighting system, including light bars, power tracks,
+    LED drivers, and required accessories.
+  </p>
+
+  <div class="estimate-steps">
+    <span>1. Add Your Shelves</span>
+    <span>2. Build Your Layout</span>
+    <span>3. Get Your Estimate</span>
+  </div>
+
+  <button
+    id="capitecEstimateButton"
+    type="button"
+    aria-haspopup="dialog"
+    aria-controls="capitecQuoteModal">
+    Build My Lighting Estimate &rarr;
+  </button>
+
+  <p class="estimate-note">
+    No sign-up required. For custom displays or OEM projects,
+    use the inquiry form.
+  </p>
 </div>
         </div>
       <div class="contact-form" style="padding: 0; overflow: hidden; border: 1px solid var(--gray-200); border-radius: 14px; background: var(--white); box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
@@ -1932,6 +2136,78 @@
       });
     });
   </script>
+<!-- TITATEC 报价器弹窗 -->
+<dialog
+  id="capitecQuoteModal"
+  aria-labelledby="capitecQuoteTitle">
 
+  <div class="capitec-quote-header">
+    <span id="capitecQuoteTitle">TITATEC Lighting Estimator</span>
+
+    <button
+      id="capitecQuoteClose"
+      type="button"
+      aria-label="Close estimator"
+      autofocus>
+      &times;
+    </button>
+  </div>
+
+  <iframe
+    id="capitecQuoteFrame"
+    data-src="https://quote.gondolalights.com/"
+    title="TITATEC Lighting Estimator">
+  </iframe>
+</dialog>
+
+<script>
+(function () {
+  const openButton = document.getElementById("capitecEstimateButton");
+  const modal = document.getElementById("capitecQuoteModal");
+  const frame = document.getElementById("capitecQuoteFrame");
+  const closeButton = document.getElementById("capitecQuoteClose");
+
+  if (!openButton || !modal || !frame || !closeButton) return;
+
+  // 只绑定联系方式下方的卡片按钮。
+  openButton.addEventListener("click", function () {
+    // 首次点击才加载报价器。
+    if (!frame.hasAttribute("src")) {
+      frame.src = frame.dataset.src;
+    }
+
+    if (!modal.open) {
+      modal.showModal();
+    }
+
+    document.documentElement.classList.add("capitec-quote-open");
+  });
+
+  closeButton.addEventListener("click", function () {
+    modal.close();
+  });
+
+  // 点击弹窗外的遮罩关闭。
+  modal.addEventListener("click", function (event) {
+    if (event.target !== modal) return;
+
+    const rect = modal.getBoundingClientRect();
+
+    if (
+      event.clientX < rect.left ||
+      event.clientX > rect.right ||
+      event.clientY < rect.top ||
+      event.clientY > rect.bottom
+    ) {
+      modal.close();
+    }
+  });
+
+  modal.addEventListener("close", function () {
+    document.documentElement.classList.remove("capitec-quote-open");
+    openButton.focus();
+  });
+})();
+</script>
 </body>
 </html>
